@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int unionOfTwoArrays(int arr1[], int N, int arr2[], int M)
+{
+    unordered_map<int, int=""> mp;
+    
+    for(int i = 0; i < N; i++)
+    {
+        mp[arr1[i]]++;
+    }
+    
+    for(int i = 0; i < M; i++)
+    {
+        mp[arr2[i]]++;
+    }
+    
+    return mp.size();
+}
+
+int main()
+{
+    int T;
+    cin >> T;
+    
+    while(T--)
+    {
+        int N, M;
+        cin >> N >> M;
+        
+        int arr1[N];
+        for(int i = 0; i < N; i++)
+        {
+            cin >> arr1[i];
+        }
+        
+        int arr2[M];
+        for(int i = 0; i < M; i++)
+        {
+            cin >> arr2[i];
+        }
+        
+        cout << unionOfTwoArrays(arr1, N, arr2, M) << endl;
+    }
+    
+    return 0;
+}

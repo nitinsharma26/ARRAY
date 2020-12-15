@@ -1,3 +1,4 @@
+Dutch national flag problem
 void sort012(int nums[], int n){
     int mid=0;
     int low=0;

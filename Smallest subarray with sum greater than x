@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int ans(int a[],int n,int k){
+    int i=0,j=0;
+    int sum=0;
+    int mn=INT_MAX;
+    
+    
+    while(j<n){
+        while(sum<=k && j<n){
+            sum+=a[j];
+            j++;
+        }
+        while(sum>k && i<j){
+            mn=min(mn,j-i);
+            sum-=a[i];
+            i++;
+        }
+    }
+    
+    return mn;
+}
+
+int main(){
+    int t;
+    cin>>t;
+    
+    while(t--){
+        int n,k;
+        cin>>n>>k;
+        int a[n];
+        for(int i=0;i<n;i++){
+            cin>>a[i];
+        }
+        
+        cout<<ans(a,n,k);
+        cout<<endl;
+	}
+	return 0;
+}
